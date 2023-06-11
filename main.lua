@@ -1,4 +1,8 @@
--- Habilitar o UTF-8 no terminal
+-- Dependencies
+local player = require("definitions.player")
+local bizarre = require("definitions.bizarre")
+
+-- Enabling UTF-8 in terminal
 os.execute("chcp 65001")
 os.execute("cls")
 
@@ -26,8 +30,10 @@ print([[
 ]])
 
 -- Obter definição do jogador
+print(string.format("A vida do jogador é %d/%d", player.health, player.maxHealth))
 
 -- Obter definição do monstro
+local boss = bizarre
 
 -- Apresentar o monstro
 
