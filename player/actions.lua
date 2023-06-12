@@ -28,7 +28,7 @@ function actions.build()
                 creatureData.health = creatureData.health - damage
 
                 -- Showing the applied damage 
-                print(string.format("Você atacou com sucesso e infligiu %d pontos de dano.", damage))
+                print(string.format("%s atacou com sucesso e infligiu %d pontos de dano.", playerData.name, damage))
                 
                 -- Presenting result
                 local healthRate = math.floor((creatureData.health / creatureData.maxHealth) * 10)
@@ -50,9 +50,9 @@ function actions.build()
             playerData.potions = playerData.potions - 1
 
             -- Regenerating health
-            local regenPoints = 5
+            local regenPoints = 10
             playerData.health = math.min(playerData.maxHealth, playerData.health + regenPoints)
-            print("Você usou a poção da vitalidade e recuperou alguns pontos de vida.")
+            print(string.format("%s usou a poção da vitalidade e recuperou alguns pontos de vida.", playerData.name))
         end
     }
 
