@@ -52,7 +52,7 @@ function actions.build()
             -- Regenerating health
             local regenPoints = 10
             playerData.health = math.min(playerData.maxHealth, playerData.health + regenPoints)
-            print(string.format("%s usou a poção da vitalidade e recuperou alguns pontos de vida.", playerData.name))
+            print(string.format("%s usou a poção da vitalidade e recuperou sua vida ao máximo. %s tem mais %d poções.", playerData.name, playerData.name, playerData.potions))
         end
     }
 

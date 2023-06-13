@@ -66,9 +66,29 @@ function utils.printCreature(creature)
     print("| ")
     print("| Atributos")
     print("|    Ataque:       " .. utils.getProgressBar(creature.attack))
-    print("|    Defesa:       " .. utils.getProgressBar(healthRate))
+    print("|    Defesa:       " .. utils.getProgressBar(creature.defense))
     print("|    Velocidade:   " .. utils.getProgressBar(creature.speed))
-    print("|    Vida:         " .. utils.getProgressBar(creature.health))
+    print("|    Vida:         " .. utils.getProgressBar(healthRate))
+end
+
+---
+--- Printing player information
+--- @param player table
+---
+function utils.printPlayer(player)
+    -- Calculating health rate
+    local healthRate = math.floor((player.health / player.maxHealth) * 10)
+
+    -- Creature card
+    print("| " .. player.name .. " (Você)")
+    print("| ")
+    print("| " .. player.description)
+    print("| ")
+    print("| Atributos")
+    print("|    Ataque:       " .. utils.getProgressBar(player.attack))
+    print("|    Defesa:       " .. utils.getProgressBar(player.defense))
+    print("|    Velocidade:   " .. utils.getProgressBar(player.speed))
+    print("|    Vida:         " .. utils.getProgressBar(healthRate))
 end
 
 --- Asks an input which is returned

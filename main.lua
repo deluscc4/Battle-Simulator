@@ -12,7 +12,10 @@ utils.enableUtf8()
 utils.printHeader()
 
 -- Obter definição do jogador
-print(string.format("A vida do jogador é %d/%d", player.health, player.maxHealth))
+utils.printPlayer(player)
+print()
+print("vs")
+print()
 
 -- Obter definição do monstro
 local boss = bizarre

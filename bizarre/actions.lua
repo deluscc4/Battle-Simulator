@@ -34,7 +34,7 @@ function actions.build()
                 
                 -- Presenting result
                 local healthRate = math.floor((playerData.health / playerData.maxHealth) * 10)
-                print(string.format("%s: %s", playerData.name, utils.getProgressBar(healthRate)))
+                print(string.format("Vida do %s: %s", playerData.name, utils.getProgressBar(healthRate)))
             else
                 print(string.format("A investida do %s passou raspando! %s foi mais ráoido!."), creatureData.name, playerData.name)
             end
@@ -57,7 +57,7 @@ function actions.build()
                 
                 -- Presenting result
                 local healthRate = math.floor((playerData.health / playerData.maxHealth) * 10)
-                print(string.format("%s: %s", playerData.name, utils.getProgressBar(healthRate)))
+                print(string.format("Vida do %s: %s", playerData.name, utils.getProgressBar(healthRate)))
             
         end
     }
