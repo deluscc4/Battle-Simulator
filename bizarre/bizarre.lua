@@ -7,6 +7,6 @@ bizarre.maxHealth = 10
 bizarre.health = 10
 bizarre.attack = 5
 bizarre.defense = 6
-bizarre.speed = 9
+bizarre.speed = 7
 
 return bizarre

@@ -28,7 +28,7 @@ function actions.build()
             if success then
                 -- Applying damage to the player
                 playerData.health = playerData.health - damage
-
+                print()
                 -- Showing the applied damage 
                 print(string.format("%s atacou %s com sucesso e infligiu %d pontos de dano.", creatureData.name, playerData.name, damage))
                 
@@ -36,6 +36,7 @@ function actions.build()
                 local healthRate = math.floor((playerData.health / playerData.maxHealth) * 10)
                 print(string.format("Vida do %s: %s", playerData.name, utils.getProgressBar(healthRate)))
             else
+                print()
                 print(string.format("A investida do %s passou raspando! %s foi mais ráoido!."), creatureData.name, playerData.name)
             end
         end
@@ -51,7 +52,7 @@ function actions.build()
 
                 -- Applying damage to the player
                 playerData.health = playerData.health - damage
-
+                print()
                 -- Showing the applied damage 
                 print(string.format("%s usou um sonar em %s com sucesso e infligiu %d pontos de dano.", creatureData.name, playerData.name, damage))
                 

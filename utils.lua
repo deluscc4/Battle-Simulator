@@ -27,7 +27,8 @@ function utils.printHeader()
 
                         ---------------------------
 
-                        ⚔️  SIMULADOR DE BATALHA ⚔️            
+                        ⚔️  SIMULADOR DE BATALHA ⚔️
+                             by: Pedro Viegas            
 
 =======================================================================
             Você empunha seu artefato e se prepara para lutar.
@@ -94,6 +95,12 @@ end
 --- Asks an input which is returned
 ---@return number
 function utils.ask()
+    io.write("> ")
+    local answer = io.read("*n")
+    return answer
+end
+
+function utils.restart()
     io.write("> ")
     local answer = io.read("*n")
     return answer

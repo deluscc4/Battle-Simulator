@@ -11,7 +11,7 @@ function actions.build()
 
     -- Attacking creature.
     local bastionAttack = {
-        description = "Lançando feitiço com o cajado.",
+        description = "Lançar feitiço com o cajado.",
         requirement = nil,
         execute = function(playerData, creatureData)
             -- 1. Defining success chance
@@ -26,7 +26,7 @@ function actions.build()
             if success then
                 -- Applying damage to the creature
                 creatureData.health = creatureData.health - damage
-
+                print()
                 -- Showing the applied damage 
                 print(string.format("%s atacou com sucesso e infligiu %d pontos de dano.", playerData.name, damage))
                 
@@ -34,7 +34,10 @@ function actions.build()
                 local healthRate = math.floor((creatureData.health / creatureData.maxHealth) * 10)
                 print(string.format("%s: %s", creatureData.name, utils.getProgressBar(healthRate)))
             else
+                print()
                 print("A magia passou raspando! Mais sorte da próxima vez.")
+                local healthRate = math.floor((creatureData.health / creatureData.maxHealth) * 10)
+                print(string.format("%s: %s", creatureData.name, utils.getProgressBar(healthRate)))
             end
         end
     }
@@ -48,7 +51,7 @@ function actions.build()
         execute = function(playerData, creatureData)
             -- Taking off potions from the player's inventory
             playerData.potions = playerData.potions - 1
-
+            print()
             -- Regenerating health
             local regenPoints = 10
             playerData.health = math.min(playerData.maxHealth, playerData.health + regenPoints)
